@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@keyframes borderAnimation {
+    0% {
+        border-color: #BB2649;
+        margin-left: 0;
+    }
+
+    25% {
+        border-color: #00ccff;
+        margin-left: 25;
+    }
+
+    50% {
+        border-color: #0000ff;
+        margin-left: 50;
+    }
+
+    75% {
+        border-color: #ff00ff;
+        margin-left: 75;
+    }
+
+    100% {
+        border-color: #eb3131;
+        margin-left: 100;
+    }
+}
+
+/* Custom scrollbar on desktop */
+@media (min-width: 576px) {
+
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-main;
+        border-radius: 5px;
+    }
+}
+
+
+.animated-border {
+    border-color: #BB2649;
+    animation: borderAnimation 3s infinite;
+}
+
+.post-preview:hover h3 {
+    color: white;
+    text-decoration: underline;
+}
+
+.md-article {
+    color: #fff;
+}
+
+.md-article h2 {
+    @apply text-main;
+}
+
+.md-article p {
+    @apply text-lg text-justify leading-7 text-grey-300;
+    @apply mb-5;
+}
+
+.md-article ul,
+.md-article ol {
+    @apply list-disc list-inside pl-4;
+}
+
+.md-article li {
+    @apply mb-2;
+}
+
+:not(pre div)>code {
+    @apply bg-main text-white px-2 py-0.5 mx-0.5 rounded-md;
+}
+
+.md-article kbd {
+    @apply bg-grey px-2 py-0.5 mx-0.5 rounded border border-grey-200;
+}
+
+.toc {
+    @apply list-inside text-gray-300 font-ubuntu;
+    /* Inverse color for the top-level ul text */
+}
+
+.toc ul {
+    @apply list-inside list-item ml-3;
+    /* Inverse color for the nested ul text */
+}
+
+.toc li {
+    @apply mb-2;
+}
+
+.toc a:hover {
+    @apply text-white transition-colors
+}
+
+@media (max-width: 768px) {
+    .hide-cursor {
+        display: none !important;
+    }
+}
